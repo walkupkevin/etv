@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteTimeVault – Win the luxury timepiece of your dreams</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; color: #333; background: #fff; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; background: linear-gradient(to right, #001F3F, #DC143C); color: white; }
+        h1 { font-size: 2.5em; margin: 0; }
+        .trust { display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 1.1em; margin-top: 10px; }
+        .stars { color: #FFD700; }
+        .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 40px 0; }
+        .comp-card { background: #f8f9fa; border: 1px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; }
+        .comp-card h3 { color: #DC143C; margin: 0 0 10px; }
+        .price { font-size: 1.5em; font-weight: bold; color: #001F3F; }
+        .achievement { text-align: center; font-size: 1.3em; font-weight: bold; color: #DC143C; margin: 20px 0; }
+        .how-it-works { margin: 40px 0; }
+        .steps { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+        .step { flex: 1; min-width: 200px; text-align: center; }
+        .step i { font-size: 3em; color: #DC143C; margin-bottom: 10px; }
+        .winners { margin: 40px 0; }
+        .winners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .winner-card { text-align: center; }
+        .winner-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; }
+        .media-logos { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+        .media-logos img { height: 50px; }
+        .trees { text-align: center; font-style: italic; color: #28a745; }
+        .newsletter { background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 40px 0; text-align: center; }
+        .newsletter input { padding: 10px; width: 250px; margin-right: 10px; }
+        .newsletter button { padding: 10px 20px; background: #DC143C; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .age-gate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); color: white; display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .age-gate.hidden { display: none; }
+        .age-modal { background: white; color: #333; padding: 40px; border-radius: 10px; text-align: center; max-width: 400px; }
+        .age-btn { padding: 10px 20px; margin: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        .yes { background: #28a745; color: white; }
+        .no { background: #dc3545; color: white; }
+        @media (max-width: 768px) { .steps { flex-direction: column; } h1 { font-size: 2em; } }
+    </style>
+</head>
+<body>
+    <!-- Age Gate Modal -->
+    <div id="ageGate" class="age-gate">
+        <div class="age-modal">
+            <h2>Are you 18 years old?</h2>
+            <p>In order to take part in our competitions you must confirm you are over the age of 18. You are not allowed to enter unless you are 18 years old or over.</p>
+            <button class="age-btn yes" onclick="confirmAge(true)">Yes, I'm 18+</button>
+            <button class="age-btn no" onclick="confirmAge(false)">No</button>
+        </div>
+    </div>
+
+    <header>
+        <h1>EliteTimeVault – Win the luxury timepiece of your dreams</h1>
+        <div class="trust">
+            <span>Rated Excellent: 3000+ 5 Star reviews</span>
+            <i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class="fas fa-star stars"></i><i class="fas fa-star stars"></i>
+            <img src="https://via.placeholder.com/100x30?text=Trustpilot" alt="Trustpilot Logo" style="height: 30px;">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="comp-grid">
+            <div class="comp-card">
+                <h3>Win the Rolex GMT ‘Pepsi’ Comp</h3>
+                <div class="price">£70 per entry</div>
+                <a href="#" style="color: #DC143C; text-decoration: none;">Enter Now</a>
+            </div>
+            <div class="comp-card">
+                <h3>Win the Rolex GMT Rootbeer Monthly Comp</h3>
+                <div class="price">£14.99 per entry</div>
+                <a href="#" style="color: #DC143C; text-decoration: none;">Enter Now</a>
+            </div>
+        </div>
+
+        <div class="achievement">We’ve given away £20,419,750 worth of timepieces and counting</div>
+
+        <section class="how-it-works">
+            <h2 style="text-align: center; color: #001F3F;">Win the watch of your dreams</h2>
+            <div class="steps">
+                <div class="step">
+                    <i class="fas fa-ticket-alt"></i>
+                    <h3>Choose your tickets</h3>
+                    <p>Choose how many tickets you want and you’re on the way to winning the luxury timepiece</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Play the game online</h3>
+                    <p>Test your watch knowledge in our online game – built to sort the connoisseurs from the pretenders.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Buy your tickets</h3>
+                    <p>Pay securely to submit your entry. We use a third party Random Number Generator called Randomdraws to choose the winner.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Win your dream watch!</h3>
+                    <p>And that’s it! You could walk away with a new £10,000 watch – for as little as £14.99.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="winners">
+            <h2 style="text-align: center; color: #001F3F;">Our community has won Patek Philippe, Rolex & Audemars Piguet</h2>
+            <div class="winners-grid">
+                <div class="winner-card">
+                    <img src="https://source.unsplash.com/300x200/?luxury-watch" alt="Won Watch 1">
+                    <p>Won 22/09/2023<br>Worth £60,000</p>
+                </div>
+                <div class="winner-card">
+                    <img src="https://source.unsplash.com/300x200/?rolex" alt="Won Watch 2">
+                    <p>Won 27/10/2023<br>Worth £40,000</p>
+                </div>
+                <div class="winner-card">
+                    <img src="https://source.unsplash.com/300x200/?patek-philippe" alt="Won Watch 3">
+                    <p>Won 6/10/2023<br>Worth £50,000</p>
+                </div>
+            </div>
+            <div class="media-logos">
+                <img src="https://via.placeholder.com/100x50?text=ETV" alt="EliteTimeVault Logo">
+                <img src="https://via.placeholder.com/100x50?text=Ecologi" alt="Ecologi Logo">
+                <img src="https://via.placeholder.com/100x50?text=Eden" alt="Eden Logo">
+            </div>
+        </section>
+
+        <div class="trees">
+            <p>Trees planted so far<br><strong>5,000+</strong> – See how we are making a difference.</p>
+        </div>
+
+        <div class="comp-grid" style="margin-top: 40px;">
+            <div class="comp-card">
+                <h3>Win the Rolex GMT ‘Pepsi’ Comp</h3>
+                <div class="price">£70 per entry</div>
+                <a href="#" style="color: #DC143C; text-decoration: none;">Enter Now</a>
+            </div>
+            <div class="comp-card">
+                <h3>Win the Rolex GMT Rootbeer Monthly Comp</h3>
+                <div class="price">£14.99 per entry</div>
+                <a href="#" style="color: #DC143C; text-decoration: none;">Enter Now</a>
+            </div>
+        </div>
+
+        <section class="newsletter">
+            <h3>Subscribe to The ETV newsletter</h3>
+            <p>Subscribe for alerts to the latest watch competitions, plus receive offers and discounts</p>
+            <img src="https://via.placeholder.com/150x50?text=ETV+Logo" alt="EliteTimeVault Logo" style="margin-bottom: 10px;">
+            <form onsubmit="subscribe(event)">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        window.onload = function() { document.getElementById('ageGate').classList.remove('hidden'); };
+        function confirmAge(isOver18) {
+            if (isOver18) {
+                document.getElementById('ageGate').classList.add('hidden');
+            } else {
+                window.location.href = 'https://www.google.com';
+            }
+        }
+        function subscribe(event) {
+            event.preventDefault();
+            alert('Thanks for subscribing! Check your email for confirmation.');
+        }
+    </script>
+</body>
+</html>
